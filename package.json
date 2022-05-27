@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "Utilities to help volunteers run Parkrun",
   "main": "milestones.js",
+  "auth"
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": {
+    "name" : "Robeena Shepherd",
+    "url" : "http://www.robeesworld.com"
+  },
   "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.11",
