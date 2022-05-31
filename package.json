@@ -2,23 +2,21 @@
   "name": "parkrun",
   "version": "1.0.0",
   "description": "Utilities to help volunteers run Parkrun",
-  "main": "milestones.js",
-  "auth"
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
   "author": {
-    "name" : "Robeena Shepherd",
-    "url" : "http://www.robeesworld.com"
+    "name": "Robeena Shepherd",
+    "url": "http://www.robeesworld.com"
   },
   "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.11",
-    "dotenv": "^16.0.1",
-    "nodemailer": "^6.7.5",
     "puppeteer": "^14.1.1"
   },
   "devDependencies": {
+    "bootstrap": "^5.1.3",
     "electron": "^19.0.1"
   }
 }
