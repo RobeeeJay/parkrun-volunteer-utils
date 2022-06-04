@@ -1,2 +1,6 @@
 .env
+.vscode
 node_modules
+parkrun-utils.cfg
+dist
+.DS_Store

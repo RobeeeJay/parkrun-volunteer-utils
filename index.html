@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="print.css" media="print" />
+    <title>Parkrun Volunteer Helper</title>
+  </head>
+  <body>
+    <h1>Milestones!</h1>
+    <p>
+        <form>
+        <div>
+            <label>Latest Results Webpage:</label> <input type="text" id="url" placeholder="This should look like https://www.parkrun.org.uk/<YOUR PARK RUN>/results/latestresults/" />
+        </div>
+        <div>
+            <label></label> <button type="button" id="fetch" class="btn btn-primary">🏃‍♀️ Fetch</button> <span id="status">the page and look for milestones</span>
+        </div>
+        <div><label>Results:</label> <textarea id="milestones" readonly="readonly"></textarea></div>
+        <div id="actions"><button type="button" id="copy" class="btn btn-light">📋 Copy</button> <button type="button" id="print" class="btn btn-light">🖨 Print</button></div>
+        </form>
+    </p>
+    <footer>
+      Built using Node.js <span id="node-version"></span>, Chromium
+      <span id="chrome-version"></span>, and Electron
+      <span id="electron-version"></span>.
+    </footer>
+    <script src="./renderer.js"></script>
+  </body>
+</html>
