@@ -12,7 +12,8 @@ footer {
   bottom: 7px;
   font-size: 10px;
   text-align: center;
-  width: 100%;
+  left: 0;
+  right: 0;
 }
 
 label {

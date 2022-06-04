@@ -1,5 +1,5 @@
-const puppeteer = require("puppeteer");
 const cheerio = require("cheerio");
+const fetch = require("node-fetch");
 
 function getRunnerData(runnerJqElement, milestone, isVolunteeringMilestone) {
   return {
@@ -30,16 +30,15 @@ function getNextSaturday() {
 async function getMilestones(resultsPage) {
   console.log(`Attempting to calculate milestones for "${resultsPage}"`);
 
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-  await page.setUserAgent(
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:100.0) Gecko/20100101 Firefox/100.0"
-  );
   console.log("Retrieving webpage");
-  await page.goto(resultsPage, { waitUntil: "domcontentloaded" });
+  const response = await fetch(resultsPage, {
+    headers: {
+      "User-Agent":
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:100.0) Gecko/20100101 Firefox/100.0",
+    },
+  });
+  const latestResultsPage = await response.text();
 
-  console.log("Loading content");
-  const latestResultsPage = await page.content();
   console.log("Parsing content");
   const $ = cheerio.load(latestResultsPage);
 
@@ -89,7 +88,6 @@ async function getMilestones(resultsPage) {
       else if (!a.volunteering && b.volunteering) return -1;
       else if (a.volunteering) {
         // Okay so both are volunteers, compare that asc
-
         return a.volunteers - b.volunteers;
       }
 
@@ -101,8 +99,6 @@ async function getMilestones(resultsPage) {
     });
 
   milestoneText += "\nEND OF LIST";
-
-  await browser.close();
 
   return milestoneText;
 }

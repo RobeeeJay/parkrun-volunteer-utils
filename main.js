@@ -3,7 +3,7 @@ const path = require("path");
 const { getMilestones } = require("./milestones");
 const process = require("process");
 const fs = require("fs");
-const CONFIG_FILENAME = "parkrun-utils.cfg";
+const CONFIG_FILENAME = `${app.getPath("userData")}/parkrun-utils.cfg`;
 let config = {};
 
 const createWindow = async () => {
@@ -47,12 +47,12 @@ const createWindow = async () => {
   });
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
-
+  //mainWindow.webContents.openDevTools();
+  mainWindow.removeMenu();
   await mainWindow.loadFile("index.html");
 
   mainWindow.webContents.send("update-resultsurl", config.resultsUrl);
-};
+};;
 
 // Attempt to read a config if one exists
 try {
