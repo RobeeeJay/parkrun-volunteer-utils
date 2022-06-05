@@ -1,25 +1,7 @@
-#url {
-  visibility: hidden;
+#not-printable {
+  display: none;
 }
 
-#milestones {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-}
-
-h1, footer, label, input, button, span, #actions {
-  visibility: hidden;
-}
-
-form > div {
-    margin-bottom: 10px;
-}
-
-body {
-    margin: 10px 5px 10px 10px;
+#printable {
+  display: block;
 }
