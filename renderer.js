@@ -2,6 +2,7 @@ const fetchButton = document.getElementById("fetch");
 const fetchUrl = document.getElementById("url");
 const statusText = document.getElementById("status");
 const milestonesTextarea = document.getElementById("milestones");
+const printable = document.getElementById("printable");
 const copyButton = document.getElementById("copy");
 const printButton = document.getElementById("print");
 let successfulRun = false;
@@ -67,6 +68,7 @@ window.electronAPI.onFetchError((event, value) => {
 window.electronAPI.onMilestones((event, value) => {
   statusText.innerHTML = "Finished getting milestones";
   milestonesTextarea.value = value;
+  printable.innerHTML = value.replace(/\n/g, "<br/>");
   fetchButton.classList.remove("btn-warning");
   fetchButton.classList.add("btn-success");
   running = false;

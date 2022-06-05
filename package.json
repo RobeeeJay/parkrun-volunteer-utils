@@ -1,6 +1,6 @@
 {
   "name": "Parkrun-Utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utilities to help volunteers run Parkrun",
   "main": "main.js",
   "scripts": {

@@ -35,3 +35,7 @@ body {
     text-align: right;
     margin-right: 65px;
 }
+
+#printable {
+  display: none;
+}
