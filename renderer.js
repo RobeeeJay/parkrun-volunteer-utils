@@ -2,7 +2,10 @@ const fetchButton = document.getElementById("fetch");
 const fetchUrl = document.getElementById("url");
 const statusText = document.getElementById("status");
 const milestonesTextarea = document.getElementById("milestones");
+<<<<<<< HEAD
 const printable = document.getElementById("printable");
+=======
+>>>>>>> 30370f3117371818a0865e96b1a3350b1222c86b
 const copyButton = document.getElementById("copy");
 const printButton = document.getElementById("print");
 let successfulRun = false;
